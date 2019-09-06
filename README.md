@@ -46,13 +46,6 @@ $result = $umSDK->register($data);
 Set new password for account
 
 ```bash
-$data = [
-    'username' => '0766808284',
-    'fullname' => 'Phước Đại',
-    'email'    => '0766808284@gmail.com',
-    'password' => '12345678',
-    'confirmpassword' => '12345678'
-];
 $phone    = '0766808284';
 $password = 'abc123ABC';
 $result   = $umSDK->resetPassword($phone, $password);

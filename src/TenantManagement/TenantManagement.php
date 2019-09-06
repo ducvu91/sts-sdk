@@ -1,5 +1,5 @@
 <?php
-namespace DaiDP\TenantManagement;
+namespace DaiDP\StsSDK\TenantManagement;
 
 use DaiDP\StsSDK\HttpClient\TMClient;
 

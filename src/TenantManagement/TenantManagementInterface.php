@@ -1,5 +1,7 @@
 <?php
-namespace DaiDP\TenantManagement;
+namespace DaiDP\StsSDK\TenantManagement;
+
+use DaiDP\StsSDK\HttpClient\ReponseData;
 
 /**
  * Interface TenantManagementInterface
@@ -13,7 +15,7 @@ interface TenantManagementInterface
      * Get list connection string
      *
      * @param $serviceName
-     * @return mixed
+     * @return ReponseData
      */
     public function getConnectionStrings($serviceName);
 
@@ -21,7 +23,7 @@ interface TenantManagementInterface
      * Create tenant
      *
      * @param $name
-     * @return mixed
+     * @return ReponseData
      */
     public function createTenant($name);
 
@@ -32,7 +34,7 @@ interface TenantManagementInterface
      * @param $connectionString
      * @param string $domain
      * @param string $service
-     * @return mixed
+     * @return ReponseData
      */
     public function createConnectionString($idTenant, $connectionString, $domain = 'mys', $service = 'brand');
 }

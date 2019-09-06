@@ -8,5 +8,9 @@ return [
     ],
     'tenant_management' => [
         'base_uri'  => env('STS_TM_URI', 'http://localhost:5101')
+    ],
+    'openssl' => [
+        'secret_key'  => env('STS_OP_SECRET', ''),
+        'salt'        => env('STS_OP_SALT', '')
     ]
 ];

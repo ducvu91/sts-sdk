@@ -1,6 +1,8 @@
 <?php
 namespace DaiDP\StsSDK\UserManagement;
 
+use DaiDP\StsSDK\HttpClient\ReponseData;
+
 /**
  * Interface UserManagementInterface
  * @package DaiDP\StsSDK\Providers
@@ -13,7 +15,7 @@ interface UserManagementInterface
      * Đăng ký user mới
      *
      * @param $data
-     * @return mixed
+     * @return ReponseData
      */
     public function register($data);
 
@@ -22,7 +24,7 @@ interface UserManagementInterface
      *
      * @param $phone
      * @param $password
-     * @return mixed
+     * @return ReponseData
      */
     public function resetPassword($phone, $password);
 
@@ -32,7 +34,7 @@ interface UserManagementInterface
      * @param $phone
      * @param $oldPassword
      * @param $newPassword
-     * @return mixed
+     * @return ReponseData
      */
     public function changePassword($phone, $oldPassword, $newPassword);
 
@@ -41,7 +43,7 @@ interface UserManagementInterface
      *
      * @param $phone
      * @param $password
-     * @return mixed
+     * @return ReponseData
      */
     public function login($phone, $password);
 
@@ -49,7 +51,7 @@ interface UserManagementInterface
      * Refresh token
      *
      * @param $refreshToken
-     * @return mixed
+     * @return ReponseData
      */
     public function refreshToken($refreshToken);
 }

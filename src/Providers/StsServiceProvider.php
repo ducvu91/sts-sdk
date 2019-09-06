@@ -60,7 +60,7 @@ class StsServiceProvider extends ServiceProvider
     protected function registerTenantManagementClient()
     {
         $this->app->singleton('daidp.sts.tenant_client', function () {
-            return new TMClient($this->config('user_management'));
+            return new TMClient($this->config('tenant_management'));
         });
     }
 

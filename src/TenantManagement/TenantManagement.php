@@ -33,7 +33,7 @@ class TenantManagement implements TenantManagementInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getConnectionStrings($serviceName)
+    public function getConnectionStrings($serviceName = 'RetailProBrand')
     {
         return $this->client->get($this->buildUrl('/tenant-connections/service/' . $serviceName));
     }
@@ -64,7 +64,7 @@ class TenantManagement implements TenantManagementInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function createConnectionString($idTenant, $connectionString, $domain = 'mys', $service = 'brand')
+    public function createConnectionString($idTenant, $connectionString, $domain = 'RetailPro', $service = 'RetailProBrand')
     {
         $data = [
             'fk_TenantId' => $idTenant,

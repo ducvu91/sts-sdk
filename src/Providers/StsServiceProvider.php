@@ -39,6 +39,7 @@ class StsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerUserManagementClient();
+        $this->registerSystemUserManagementClient();
         $this->registerTenantManagementClient();
         $this->registerOpenSSLCrypt();
 

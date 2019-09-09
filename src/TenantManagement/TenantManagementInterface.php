@@ -17,7 +17,7 @@ interface TenantManagementInterface
      * @param $serviceName
      * @return ReponseData
      */
-    public function getConnectionStrings($serviceName);
+    public function getConnectionStrings($serviceName = 'RetailProBrand');
 
     /**
      * Create tenant
@@ -36,5 +36,5 @@ interface TenantManagementInterface
      * @param string $service
      * @return ReponseData
      */
-    public function createConnectionString($idTenant, $connectionString, $domain = 'mys', $service = 'brand');
+    public function createConnectionString($idTenant, $connectionString, $domain = 'RetailPro', $service = 'RetailProBrand');
 }

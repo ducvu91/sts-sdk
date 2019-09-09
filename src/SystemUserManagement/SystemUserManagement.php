@@ -22,7 +22,7 @@ class SystemUserManagement implements SystemUserManagementInterface
      */
     public function __construct()
     {
-        $this->client = app()->get('daidp.sts.user_client');
+        $this->client = app()->get('daidp.sts.sys_user_client');
     }
 
     /**

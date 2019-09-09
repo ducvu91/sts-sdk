@@ -62,7 +62,7 @@ class StsServiceProvider extends ServiceProvider
      */
     protected function registerSystemUserManagementClient()
     {
-        $this->app->singleton('daidp.sts.user_client', function () {
+        $this->app->singleton('daidp.sts.sys_user_client', function () {
             return new UMClient($this->config('system_user_management'));
         });
     }

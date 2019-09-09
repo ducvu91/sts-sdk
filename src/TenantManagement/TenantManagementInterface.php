@@ -17,7 +17,7 @@ interface TenantManagementInterface
      * @param $serviceName
      * @return ReponseData
      */
-    public function getConnectionStrings($serviceName = 'RetailProBrand');
+    public function getConnectionStrings($serviceName);
 
     /**
      * Create tenant

@@ -4,6 +4,8 @@ namespace DaiDP\StsSDK\Providers;
 use DaiDP\StsSDK\HttpClient\TMClient;
 use DaiDP\StsSDK\HttpClient\UMClient;
 use DaiDP\StsSDK\Support\OpensslCrypt;
+use DaiDP\StsSDK\SystemUserManagement\SystemUserManagement;
+use DaiDP\StsSDK\SystemUserManagement\SystemUserManagementInterface;
 use DaiDP\StsSDK\TenantManagement\TenantManagement;
 use DaiDP\StsSDK\TenantManagement\TenantManagementInterface;
 use DaiDP\StsSDK\UserManagement\UserManagement;
@@ -41,6 +43,7 @@ class StsServiceProvider extends ServiceProvider
         $this->registerOpenSSLCrypt();
 
         $this->app->singleton(UserManagementInterface::class, UserManagement::class);
+        $this->app->singleton(SystemUserManagementInterface::class, SystemUserManagement::class);
         $this->app->singleton(TenantManagementInterface::class, TenantManagement::class);
     }
 
@@ -51,6 +54,16 @@ class StsServiceProvider extends ServiceProvider
     {
         $this->app->singleton('daidp.sts.user_client', function () {
             return new UMClient($this->config('user_management'));
+        });
+    }
+
+    /**
+     * Đăng ký User management
+     */
+    protected function registerSystemUserManagementClient()
+    {
+        $this->app->singleton('daidp.sts.user_client', function () {
+            return new UMClient($this->config('system_user_management'));
         });
     }
 

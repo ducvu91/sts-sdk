@@ -1,16 +1,24 @@
 <?php
-namespace DaiDP\StsSDK\SystemUserManagement;
+namespace DaiDP\StsSDK\UserManagement;
 
 use DaiDP\StsSDK\HttpClient\ReponseData;
 
 /**
- * Interface UserManagementInterface
+ * Interface TenantUserManagementInterface
  * @package DaiDP\StsSDK\Providers
  * @author DaiDP
  * @since Sep, 2019
  */
-interface SystemUserManagementInterface
+interface TenantUserManagementInterface
 {
+    /**
+     * Set ID Tenant
+     *
+     * @param $idTenant
+     * @return TenantUserManagementInterface
+     */
+    public function setTenantId($idTenant);
+
     /**
      * Đăng ký user mới
      *
@@ -22,30 +30,30 @@ interface SystemUserManagementInterface
     /**
      * Đặt lại mật khẩu mới
      *
-     * @param $email
+     * @param $username
      * @param $password
-     * @return ReponseData
+     * @return mixed
      */
-    public function resetPassword($email, $password);
+    public function resetPassword($username, $password);
 
     /**
      * Đổi mật khẩu
      *
-     * @param $email
+     * @param $username
      * @param $oldPassword
      * @param $newPassword
-     * @return ReponseData
+     * @return mixed
      */
-    public function changePassword($email, $oldPassword, $newPassword);
+    public function changePassword($username, $oldPassword, $newPassword);
 
     /**
      * Đăng nhập
      *
-     * @param $email
+     * @param $username
      * @param $password
-     * @return ReponseData
+     * @return mixed
      */
-    public function login($email, $password);
+    public function login($username, $password);
 
     /**
      * Refresh token

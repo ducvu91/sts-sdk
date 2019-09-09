@@ -40,15 +40,15 @@ class SystemUserManagement implements SystemUserManagementInterface
     /**
      * Đặt lại mật khẩu mới
      *
-     * @param $phone
+     * @param $email
      * @param $password
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function resetPassword($phone, $password)
+    public function resetPassword($email, $password)
     {
         $data = [
-            'username'        => $phone,
+            'email'           => $email,
             'newpassword'     => $password,
             'confirmpassword' => $password
         ];
@@ -59,16 +59,16 @@ class SystemUserManagement implements SystemUserManagementInterface
     /**
      * Đổi mật khẩu
      *
-     * @param $phone
+     * @param $email
      * @param $oldPassword
      * @param $newPassword
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function changePassword($phone, $oldPassword, $newPassword)
+    public function changePassword($email, $oldPassword, $newPassword)
     {
         $data = [
-            'username'        => $phone,
+            'email'           => $email,
             'currentpassword' => $oldPassword,
             'newpassword'     => $newPassword,
             'confirmpassword' => $newPassword
@@ -80,17 +80,17 @@ class SystemUserManagement implements SystemUserManagementInterface
     /**
      * Đăng nhập
      *
-     * @param $phone
+     * @param $email
      * @param $password
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function login($phone, $password)
+    public function login($email, $password)
     {
         $data = [
             'grant_type' => 'password',
             'scope'      => 'openid offline_access',
-            'username'   => $phone,
+            'username'   => $email,
             'password'   => $password
         ];
 

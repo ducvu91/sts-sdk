@@ -8,6 +8,8 @@ use DaiDP\StsSDK\SystemUserManagement\SystemUserManagement;
 use DaiDP\StsSDK\SystemUserManagement\SystemUserManagementInterface;
 use DaiDP\StsSDK\TenantManagement\TenantManagement;
 use DaiDP\StsSDK\TenantManagement\TenantManagementInterface;
+use DaiDP\StsSDK\UserManagement\TenantUserManagement;
+use DaiDP\StsSDK\UserManagement\TenantUserManagementInterface;
 use DaiDP\StsSDK\UserManagement\UserManagement;
 use DaiDP\StsSDK\UserManagement\UserManagementInterface;
 use Illuminate\Support\ServiceProvider;
@@ -41,11 +43,13 @@ class StsServiceProvider extends ServiceProvider
         $this->registerUserManagementClient();
         $this->registerSystemUserManagementClient();
         $this->registerTenantManagementClient();
+        $this->registerTenantUserManagementClient();
         $this->registerOpenSSLCrypt();
 
         $this->app->singleton(UserManagementInterface::class, UserManagement::class);
         $this->app->singleton(SystemUserManagementInterface::class, SystemUserManagement::class);
         $this->app->singleton(TenantManagementInterface::class, TenantManagement::class);
+        $this->app->singleton(TenantUserManagementInterface::class, TenantUserManagement::class);
     }
 
     /**
@@ -75,6 +79,16 @@ class StsServiceProvider extends ServiceProvider
     {
         $this->app->singleton('daidp.sts.tenant_client', function () {
             return new TMClient($this->config('tenant_management'));
+        });
+    }
+
+    /**
+     * Đăng ký Tenant User management
+     */
+    protected function registerTenantUserManagementClient()
+    {
+        $this->app->singleton('daidp.sts.tenant_user_client', function () {
+            return new UMClient($this->config('tenant_user_management'));
         });
     }
 

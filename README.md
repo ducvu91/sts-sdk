@@ -122,3 +122,45 @@ $oldPassword = '12345678';
 $newPassword = 'abc123ABC';
 $result      = $sysuSDK->changePassword($email, $oldPassword, $newPassword);
 ```
+
+## Tenant user management
+Basic use:
+```bash
+$tumSDK = app()->get(\DaiDP\StsSDK\TenantUserManagement\TenantUserManagementInterface::class);
+$tumSDK->setTenantId('f06e16bc-1035-4de3-93cc-96bdd21da4a5'); // required
+```
+
+### Methods
+The following methods are available on the TenantUserManagement instance.
+
+#### register()
+Create new account
+```bash
+$data = [
+    'username' => 'usertn001',
+    'email'    => 'usertn001@gmail.com',
+    'fullname' => 'Phước Đại',
+    'password' => '12345678',
+    'confirmpassword' => '12345678'
+];
+$result = $tumSDK->register($data);
+```
+
+#### resetPassword()
+Set new password for account
+
+```bash
+$username = 'usertn001';
+$password = 'abc123ABC';
+$result   = $tumSDK->resetPassword($username, $password);
+```
+
+#### changePassword()
+Change account password
+
+```bash
+$username    = 'usertn001';
+$oldPassword = '12345678';
+$newPassword = 'abc123ABC';
+$result      = $tumSDK->changePassword($username, $oldPassword, $newPassword);
+```

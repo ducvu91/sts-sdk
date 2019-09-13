@@ -1,5 +1,5 @@
 <?php
-namespace DaiDP\StsSDK\UserManagement;
+namespace DaiDP\StsSDK\TenantUserManagement;
 
 use DaiDP\StsSDK\HttpClient\ReponseData;
 

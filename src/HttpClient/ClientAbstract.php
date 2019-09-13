@@ -43,7 +43,7 @@ abstract class ClientAbstract
      */
     protected function parseResponse(ResponseInterface $response)
     {
-        $isError = $response->getStatusCode() != 200;
+        $isError = !in_array($response->getStatusCode(), [200, 201]);
         $rspData = json_decode($response->getBody()->getContents(), true);
 
         return new ReponseData($isError, $rspData);

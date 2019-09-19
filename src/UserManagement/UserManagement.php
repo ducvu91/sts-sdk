@@ -113,4 +113,16 @@ class UserManagement implements UserManagementInterface
 
         return $this->client->token('/connect/token', $data);
     }
+
+    /**
+     * xóa tài khoản
+     *
+     * @param $refreshToken
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function delete($uid)
+    {
+        return $this->client->delete('api/v1/users/'.$uid);
+    }
 }

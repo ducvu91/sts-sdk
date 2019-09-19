@@ -49,4 +49,21 @@ class UMClient extends ClientAbstract
 
         return $this->parseResponse($oResponse);
     }
+
+    /**
+     * Gọi api delete dữ liệu
+     *
+     * @param $url
+     * @param $data
+     * @return ReponseData
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function delete($url)
+    {
+        $oClient = $this->getHttpClient();
+
+        $oResponse = $oClient->request('DELETE', $url);
+
+        return $this->parseResponse($oResponse);
+    }
 }

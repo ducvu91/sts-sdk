@@ -98,7 +98,7 @@ class SystemUserManagement implements SystemUserManagementInterface
     }
 
     /**
-     *
+     * Refresh access token
      *
      * @param $refreshToken
      * @return mixed
@@ -117,7 +117,7 @@ class SystemUserManagement implements SystemUserManagementInterface
     /**
      * xóa tài khoản
      *
-     * @param $refreshToken
+     * @param $uid
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */

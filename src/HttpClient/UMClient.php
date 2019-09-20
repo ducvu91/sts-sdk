@@ -54,7 +54,6 @@ class UMClient extends ClientAbstract
      * Gọi api delete dữ liệu
      *
      * @param $url
-     * @param $data
      * @return ReponseData
      * @throws \GuzzleHttp\Exception\GuzzleException
      */

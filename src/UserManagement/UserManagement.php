@@ -98,7 +98,7 @@ class UserManagement implements UserManagementInterface
     }
 
     /**
-     *
+     * Refresh access token
      *
      * @param $refreshToken
      * @return mixed
@@ -117,7 +117,6 @@ class UserManagement implements UserManagementInterface
     /**
      * xóa tài khoản
      *
-     * @param $refreshToken
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */

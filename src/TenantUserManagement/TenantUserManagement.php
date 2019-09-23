@@ -69,7 +69,7 @@ class TenantUserManagement implements TenantUserManagementInterface
     {
         $url  = $this->buildUrl('/portal/api/v1/users/resetpassword');
         $data = [
-            'username'        => $username,
+            'email'        => $username,
             'newpassword'     => $password,
             'confirmpassword' => $password
         ];
@@ -90,7 +90,7 @@ class TenantUserManagement implements TenantUserManagementInterface
     {
         $url  = $this->buildUrl('/portal/api/v1/users/changepassword');
         $data = [
-            'username'        => $username,
+            'email'        => $username,
             'currentpassword' => $oldPassword,
             'newpassword'     => $newPassword,
             'confirmpassword' => $newPassword

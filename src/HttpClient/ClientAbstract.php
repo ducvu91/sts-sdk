@@ -1,6 +1,7 @@
 <?php
 namespace DaiDP\StsSDK\HttpClient;
 
+use DaiDP\AzureNoti\ResponseData;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
@@ -39,13 +40,13 @@ abstract class ClientAbstract
      * Parse response data
      *
      * @param ResponseInterface $response
-     * @return ReponseData
+     * @return ResponseData
      */
     protected function parseResponse(ResponseInterface $response)
     {
         $isError = !in_array($response->getStatusCode(), [200, 201]);
         $rspData = json_decode($response->getBody()->getContents(), true);
 
-        return new ReponseData($isError, $rspData);
+        return new ResponseData($isError, $rspData);
     }
 }

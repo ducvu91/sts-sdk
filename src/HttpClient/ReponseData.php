@@ -19,7 +19,7 @@ class ReponseData
      * @param $errorMessage
      * @param $data
      */
-    public function __construct($error, $errorMessage, $data)
+    public function __construct($error, $data, $errorMessage = null)
     {
         $this->error = $error;
         $this->errorMessage = __($errorMessage);

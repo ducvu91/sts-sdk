@@ -93,8 +93,7 @@ class SystemUserManagement implements SystemUserManagementInterface
             'username'   => $email,
             'password'   => $password
         ];
-
-        return $this->client->token('/connect/token', $data);
+        return $this->client->token('/api/v1/users/login', $data);
     }
 
     /**

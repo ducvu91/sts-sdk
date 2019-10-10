@@ -1,11 +1,6 @@
 # DaiDP STS SDK
 User management and Brand tenant
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/phuocdaivl/sts-sdk?style=flat-square)](https://packagist.org/packages/phuocdaivl/sts-sdk)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/phuocdaivl/sts-sdk/master.svg?style=flat-square)](https://travis-ci.org/phuocdaivl/sts-sdk)
-[![Total Downloads](https://img.shields.io/packagist/dt/phuocdaivl/sts-sdk.svg?style=flat-square)](https://packagist.org/packages/phuocdaivl/sts-sdk)
-
 ## Download & Install
 ```bash
 composer require phuocdaivl/sts-sdk

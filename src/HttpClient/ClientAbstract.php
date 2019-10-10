@@ -49,6 +49,6 @@ abstract class ClientAbstract
         if($isError){
             $errorMessage = current($rspData['errors']);
         }
-        return new ReponseData($isError, $errorMessage, $rspData);
+        return new ReponseData($isError, $rspData, $errorMessage);
     }
 }

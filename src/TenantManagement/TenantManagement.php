@@ -64,11 +64,8 @@ class TenantManagement implements TenantManagementInterface
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function createConnectionString($idTenant, $db_name, $domain = 'RetailPro', $service = 'RetailProBrand')
+    public function createConnectionString($idTenant, $connectionString, $domain = 'RetailPro', $service = 'RetailProBrand')
     {
-        $config = $this->config('tenant_management');
-        $connectionString = 'Server='.$config['server'].';port='.$config['port'].';Database='.$config['database'].
-        $db_name.';user='.$config['user'].';password='.$config['pass'];
         $data = [
             'fk_TenantId' => $idTenant,
             'domain' => $domain,
@@ -88,18 +85,5 @@ class TenantManagement implements TenantManagementInterface
     protected function buildUrl($url)
     {
         return $this->urlVersion . $url;
-    }
-
-    /**
-     * Helper to get the config values.
-     *
-     * @param  string  $key
-     * @param  string  $default
-     *
-     * @return mixed
-     */
-    protected function config($key, $default = null)
-    {
-        return config("sts.$key", $default);
     }
 }
